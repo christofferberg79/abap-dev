@@ -6,6 +6,7 @@
 - [Blog - SAP ABAP Platform 1909, Developer Edition](https://blogs.sap.com/2021/02/15/sap-abap-platform-1909-developer-edition-available-soon/)
 - [ABAP Platform, Developer Edition on Docker Hub](https://hub.docker.com/_/sap-abap-trial)
 - [Setup instructions](https://hub.docker.com/_/sap-abap-trial/plans/ac8a4f9b-ae29-4afa-9b39-25aeea24b821?tab=instructions)
+- [ABAP Git](http://eclipse.abapgit.org/updatesite/)
 
 ## Setup
 ```sh
@@ -46,3 +47,13 @@
 > /usr/local/sbin/rcscc_daemon stop
 > exit
 ```
+
+## Use ABAP Git in ADT (Eclipse)
+### Backend
+- Transaction: ZABAPGIT
+- Pull from https://github.com/abapGit/abapGit (might have to switch branch from master to main)
+- Clone from https://github.com/abapGit/ADT_Backend
+### ADT
+Software Sites
+- https://tools.hana.ondemand.com/latest
+- https://eclipse.abapgit.org/updatesite
