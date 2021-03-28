@@ -61,6 +61,10 @@ https://localhost:8443/
 User: Administrator  
 Password: manage
 
+### Connect to SAP BTP
+https://developers.sap.com/tutorials/cp-launchpad-federation-connectivity.html  
+https://blogs.sap.com/2018/11/12/how-to-setup-cloud-connection/
+
 ## Use ABAP Git in ADT (Eclipse)
 ### Backend
 - Transaction: ZABAPGIT
