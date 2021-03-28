@@ -8,7 +8,9 @@
 - [Setup instructions](https://hub.docker.com/_/sap-abap-trial/plans/ac8a4f9b-ae29-4afa-9b39-25aeea24b821?tab=instructions)
 - [ABAP Git](http://eclipse.abapgit.org/updatesite/)
 
-## Setup
+## ABAP Environment
+
+### Setup
 ```sh
 > docker login
 > docker pull store/saplabs/abaptrial:1909
@@ -18,7 +20,7 @@
 > docker run --stop-timeout 3600 -i --name a4h -h vhcala4hci -p 3200:3200 -p 3300:3300 -p 8443:8443 -p 30213:30213 -p 50000:50000 -p 50001:50001 --sysctl kernel.shmmni=32768 store/saplabs/abaptrial:1909 -agree-to-sap-license
 ```
 
-## Start
+### Start
 ```sh
 > sudo sysctl vm.max_map_count=2147483647
 > sudo sysctl fs.file-max=20000000
@@ -26,27 +28,38 @@
 > docker start -ai a4h
 ```
 
-## Stop
-### From host
+### Stop
+#### From host
 ```sh
 > docker stop --time 7200 a4h
 ```
-### From container
+#### From container
 ```sh
 > Ctrl-C
 ```
 
-## Start SAP Cloud Connector
+### Login
+Users: SAP*, DEVELOPER, BWDEVELOPER  
+Password: Ldtf5432
+
+## SAP Cloud Connector
+
+### Start
 ```sh
 > docker exec -it a4h bash
 > /usr/local/sbin/rcscc_daemon start
 ```
 
-## Stop SAP Cloud Connector
+### Stop
 ```sh
 > /usr/local/sbin/rcscc_daemon stop
 > exit
 ```
+
+### Web UI
+https://localhost:8443/  
+User: Administrator  
+Password: manage
 
 ## Use ABAP Git in ADT (Eclipse)
 ### Backend
@@ -55,5 +68,6 @@
 - Clone from https://github.com/abapGit/ADT_Backend
 ### ADT
 Software Sites
+- [Lightweight Eclipse installation](https://blogs.sap.com/2021/03/19/lightweight-eclipse-installation-or-yet-anther-blog-post-about-installing-eclipse/)
 - https://tools.hana.ondemand.com/latest
 - https://eclipse.abapgit.org/updatesite
